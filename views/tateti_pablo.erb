@@ -4,9 +4,10 @@ a{text-decoration:none;color:black;}
 <h1>Tateti</h1>
 Turno para jugador: 
 <div id="title">
-<%=@@tateti.turno.jugador%> 
+<%= @quien_juega %> 
 </div>
 
+<!-- 
 <table style="font-size:100px;">
 	<tr>
 		<td id="td_1_1"><%=@@tateti.jugada(1,1)%></td>
@@ -25,9 +26,11 @@ Turno para jugador:
 	</tr>
 </table>
 
+-->
+
 <div>
-	Jugador O: <%=@@score_X.to_s%><br>
-	Jugador X: <%=@@score_O.to_s%>
+	Jugador O: <%=@score_X.to_s%><br>
+	Jugador X: <%=@score_O.to_s%>
 </div>
 <p>
 <a href="/">Reset</a>

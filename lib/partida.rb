@@ -1,7 +1,10 @@
+require "./lib/logica.rb"
+
 class Partida
 	def initialize
 		@@score_O = 0
 		@@score_X = 0
+		@@game = Tateti.new
 	end
 
 	def score jugador
