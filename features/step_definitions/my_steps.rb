@@ -11,10 +11,6 @@ Then(/^tiene que decir "(.*?)"$/) do |txtTurno|
   last_response.body.should =~ /#{txtTurno}/m
 end
 
-When(/^hago click en O$/) do
-  click_link("jugador")
-end
-
 When(/^el jugador "(.*?)" elije la fila (\d+) y la columna (\d+)$/) do |player, fila, columna|
 	 click_link("#{player}_#{fila}_#{columna}")
 end

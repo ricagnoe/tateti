@@ -8,15 +8,11 @@ Scenario: Mostrar turno O
 	Given abro la pagina
 	Then tiene que decir "O"
 
-Scenario: Mostrar turno X
-	Given abro la pagina
-	When hago click en O
-	Then tiene que decir "X"
-
 Scenario: Elijo una opción
 	Given abro la pagina
 	When el jugador "O" elije la fila 1 y la columna 1 
 	Then la celda de la fila 1 y la columna 1 muestra "O"
+	And tiene que decir "X"
 
 Scenario: Elijo una opción
 	Given abro la pagina
