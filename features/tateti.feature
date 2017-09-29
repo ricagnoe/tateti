@@ -38,3 +38,9 @@ Scenario: Elijo una opción
 	And el jugador "X" elije la fila 2 y la columna 2
 	And el jugador "O" elije la fila 3 y la columna 2 
 	Then la celda de la fila 3 y la columna 2 muestra "O"
+
+Scenario: Inicia la partida
+	Given abro la pagina
+	Then la partida deberia aparecer Jugador "X": 0 y Jugador "O": 0
+
+

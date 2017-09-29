@@ -1,8 +1,12 @@
 require 'sinatra'
 require './lib/turno.rb'
+require './lib/partida.rb'
 
 get '/' do
 		@@turno = Turno.new
+		@@partida = Partida.new
+		@@score_X = @@partida.score("X") 
+		@@score_O = @@partida.score("O") 
 		@@td_1_1 = "<a href='/O/1_1' id='O_1_1'>[ ]</a>"
 		@@td_1_2 = "<a href='/O/1_2' id='O_1_2'>[ ]</a>"
 		@@td_1_3 = "<a href='/O/1_3' id='O_1_3'>[ ]</a>"
