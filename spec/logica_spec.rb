@@ -2,14 +2,28 @@ require "./lib/logica.rb"
 
 describe "Tateti" do
 
-	it "Jugado O marca la opción 1, 1" do
+	it "Jugador O marca la opción 1, 1" do
 		game = Tateti.new
-		game.jugada("O", 1, 1).should == 0
+		game.jugar(1,1)
+		game.jugada(1, 1).should == "O"
 	end
 
-	it "Jugado O marca la opción 3, 3" do
+	it "Jugador X marca la opción 3, 3" do
 		game = Tateti.new
-		game.jugada("O", 3, 3).should == 8
+		game.jugar(1,1)
+		game.jugar(3,3)
+		game.jugada(3, 3).should == "X"
+	end
+
+	it "Jugador O marca 1, 1 y marca 1, 2 y marca 1, 3" do
+		game = Tateti.new
+		game.jugar(1,1)
+		game.jugar(2,1)
+		game.jugar(1,2)
+		game.jugar(3,3)
+		game.jugar(1,3)
+		game.ganador == "O"
+		
 	end
 
 end
