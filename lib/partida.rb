@@ -15,13 +15,14 @@ class Partida
 		else
 			return @score_O
 		end
+		
 	end
 
 	def gano jugador
 		if jugador == "X"
 			@score_X +=1
 			return @score_X
-		else
+		elsif jugador == "O"
 			@score_O +=1
 			return @score_O
 		end

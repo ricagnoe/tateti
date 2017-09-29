@@ -47,5 +47,7 @@ Scenario: Elijo una opción ganadora
 	And el jugador "X" elije la fila 3 y la columna 3
 	And el jugador "O" elije la fila 1 y la columna 3 
 	Then el ganador tiene que decir "O"
+	And el score de "O" tiene que decir 1
+
 
 

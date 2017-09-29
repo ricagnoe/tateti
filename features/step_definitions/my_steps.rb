@@ -32,6 +32,12 @@ Then(/^el ganador tiene que decir "(.*?)"$/) do |ganador|
 
 end
 
+Then(/^el score de "(.*?)" tiene que decir (\d+)$/) do |jugador, score|
+  	last_response.should have_xpath( "//span[@id=\"score#{jugador}\"]") do |span|
+		span.should contain(score)
+	end
+end
+
 
 
 
