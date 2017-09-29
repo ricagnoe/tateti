@@ -1,6 +1,17 @@
 require 'sinatra'
 
+get '/turno' do
+	if @@turno == "turno jugador B"
+	 	@@turno="turno jugador A"
+	else
+	 	@@turno="turno jugador B"
+	end 
+	erb :tateti_pablo
+end
+
+
 get '/' do
+		@@turno="turno jugador A"
 		@@td_1_1 = "<a href='/O/1_1' id='O_1_1'>[ ]</a>"
 		@@td_1_2 = "<a href='/O/1_2' id='O_1_2'>[ ]</a>"
 		@@td_1_3 = "<a href='/O/1_3' id='O_1_3'>[ ]</a>"
