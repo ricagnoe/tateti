@@ -8,7 +8,9 @@ end
 
 
 Then(/^tiene que decir "(.*?)"$/) do |txtTurno|
-  last_response.body.should =~ /#{txtTurno}/m
+  last_response.should have_xpath( "//div[@id=\"title\"]") do |div|
+		div.should contain(txtTurno)
+	end
 end
 
 When(/^el jugador "(.*?)" elije la fila (\d+) y la columna (\d+)$/) do |player, fila, columna|

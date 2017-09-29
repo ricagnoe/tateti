@@ -1,13 +1,6 @@
 require 'sinatra'
 require './lib/turno.rb'
 
-get '/turno' do
-	
-	@@turno.cambiaTurno
-	erb :tateti_pablo
-end
-
-
 get '/' do
 		@@turno = Turno.new
 		@@td_1_1 = "<a href='/O/1_1' id='O_1_1'>[ ]</a>"
@@ -23,7 +16,7 @@ get '/' do
 end
 
 get '/:player/:cell' do
-	@player = params["player"]
+	@player = @@turno.jugador
 	cell = params["cell"]
 
 	if cell == "1_1"
@@ -51,11 +44,8 @@ get '/:player/:cell' do
 	end
 
 	
-	if @player == "O"
-		@player = "X"
-	else
-		@player = "O"
-	end
+	@@turno.cambiaTurno
+	@player = @@turno.jugador
 
 		if @@td_1_1.length > 1
 			@@td_1_1 = "<a href='/#{@player}/1_1' id='#{@player}_1_1'>[ ]</a>"
