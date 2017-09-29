@@ -11,11 +11,9 @@ get '/' do
 end
 
 get '/:player/:cell' do
+
 	cell = params["cell"].split("_")
 	@@tateti.jugar(cell.first.to_i,cell.last.to_i)
-	if @@tateti.ganador != nil
-		@@partida.ganador(@@tateti.ganador)
-	end
 
 	erb :tateti_pablo
 end
