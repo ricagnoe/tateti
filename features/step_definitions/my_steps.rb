@@ -24,10 +24,12 @@ Then(/^la celda de la fila (\d+) y la columna (\d+) muestra "(.*?)"$/) do |fila,
 	end
 end
 
+
 Then(/^el ganador tiene que decir "(.*?)"$/) do |ganador|
   	last_response.should have_xpath( "//div[@id=\"ganador\"]") do |div|
 		div.should contain(ganador)
 	end
+
 end
 
 
