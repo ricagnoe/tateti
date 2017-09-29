@@ -4,14 +4,14 @@ Scenario: levantar sitio
 	Given abro la pagina
 	Then dice "Tateti"
 
-Scenario: Mostrar turno A
+Scenario: Mostrar turno O
 	Given abro la pagina
-	Then tiene que decir "turno jugador A"
+	Then tiene que decir "O"
 
-Scenario: Mostrar turno B
+Scenario: Mostrar turno X
 	Given abro la pagina
-	When hago click en jugador A
-	Then tiene que decir "turno jugador B"
+	When hago click en O
+	Then tiene que decir "X"
 
 Scenario: Elijo una opción
 	Given abro la pagina
