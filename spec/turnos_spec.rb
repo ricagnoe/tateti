@@ -19,4 +19,15 @@ describe "Turno" do
 		turno.cambiaTurno()
 		turno.jugador.should == "O"
 	end
+
+	it "Empieza el turno en 0" do
+		turno = Turno.new
+		turno.getCantTurnos.should == 0
+	end
+
+	it "Cuenta Turnos" do
+		turno = Turno.new
+		turno.cambiaTurno()
+		turno.getCantTurnos.should == 1
+	end
 end
