@@ -29,8 +29,7 @@ class Partida
 	end
 
 	def reset
-		@score_X = 0
-		@score_O = 0
+		@game = Tateti.new
 	end
 
 end

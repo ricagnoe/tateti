@@ -7,11 +7,7 @@ td{text-align:center;width:130px;}
 Turno para jugador: <div id="title" style="display:inline-block">
 <%= @@partida.game.turno.jugador %> 
 </div>
-<BR>
-Ganador:
-<div id="ganador" style="display:inline-block">
-<%=@@partida.game.ganador%> 
-</div>
+
 
 <table style="font-size:100px;" align="center">
 	<tr>
@@ -37,7 +33,7 @@ Ganador:
 	Jugador X: <span id="scoreX"><%=@@partida.score("X")%></span>
 </div>
 <p>
-<a href="/">Reset</a>
+
 
 </p>
 </div>
