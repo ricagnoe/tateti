@@ -24,9 +24,12 @@ Then(/^la celda de la fila (\d+) y la columna (\d+) muestra "(.*?)"$/) do |fila,
 	end
 end
 
-Then(/^la partida deberia aparecer Jugador "(.*?)": (\d+) y Jugador "(.*?)": (\d+)$/) do |jugador1, score1, jugador2, score2|
-  last_response.body.should =~ /Jugador #{jugador1}: #{score1}/m
-  last_response.body.should =~ /Jugador #{jugador2}: #{score2}/m
+
+Then(/^el ganador tiene que decir "(.*?)"$/) do |ganador|
+  	last_response.should have_xpath( "//div[@id=\"ganador\"]") do |div|
+		div.should contain(ganador)
+	end
+
 end
 
 

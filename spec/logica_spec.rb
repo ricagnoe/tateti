@@ -22,8 +22,37 @@ describe "Tateti" do
 		game.jugar(1,2)
 		game.jugar(3,3)
 		game.jugar(1,3)
-		game.ganador == "O"
-		
+		game.ganador.should  == "O"
+	end
+
+	it "Jugador O marca 1, 1 y marca 2, 1 y marca 3, 1" do
+		game = Tateti.new
+		game.jugar(1,1)
+		game.jugar(2,2)
+		game.jugar(2,1)
+		game.jugar(3,3)
+		game.jugar(3,1)
+		game.ganador.should  == "O"
+	end
+
+	it "Jugador O marca 1, 1 y marca 2, 2 y marca 3, 3" do
+		game = Tateti.new
+		game.jugar(1,1)
+		game.jugar(2,3)
+		game.jugar(2,2)
+		game.jugar(1,3)
+		game.jugar(3,3)
+		game.ganador.should  == "O"
+	end
+	
+	it "Jugador O marca 1, 3 y marca 2, 2 y marca 3, 1" do
+		game = Tateti.new
+		game.jugar(1,3)
+		game.jugar(2,3)
+		game.jugar(2,2)
+		game.jugar(1,1)
+		game.jugar(3,1)
+		game.ganador.should  == "O"
 	end
 
 end
