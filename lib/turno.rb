@@ -1,6 +1,7 @@
 class Turno
 	def initialize
 		@jugador = "O"
+		@@cont = 0
 	end
 	def jugador
 		@jugador
@@ -11,5 +12,11 @@ class Turno
 		else
 			@jugador = "O"
 		end
+
+		@@cont= @@cont + 1
+	end
+
+	def getCantTurnos
+		return @@cont
 	end
 end

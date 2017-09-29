@@ -4,6 +4,7 @@ class Tateti
 	def initialize
 		@matrix = Array.new(9)
 		@turno = Turno.new
+		@@cont = 0
 	end
 
 	def jugar (fila, columna)
@@ -45,10 +46,16 @@ class Tateti
 		
 		if @matrix[2] != nil and @matrix[2] == @matrix[4] and @matrix[4] == @matrix[6]
 				return @matrix[2]
-		end
-		
+		end	
 		return ""
+	end
 
+	def finDePartida
+	  if ganador == "X" or ganador == "O" or @turno.getCantTurnos == 9
+	    return 1
+	  else
+	    return 0
+	  end
 	end
 
 end

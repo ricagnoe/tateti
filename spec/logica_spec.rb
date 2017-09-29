@@ -55,4 +55,28 @@ describe "Tateti" do
 		game.ganador.should  == "O"
 	end
 
+	it "Fin de Partida" do
+		game = Tateti.new
+		game.jugar(1,3)
+		game.jugar(2,3)
+		game.jugar(2,2)
+		game.jugar(1,1)
+		game.jugar(3,1)
+		game.finDePartida.should  == 1
+	end
+
+	it "No ganó nadie" do
+		game = Tateti.new
+		game.jugar(1,1) #x
+		game.jugar(1,2) #o
+		game.jugar(1,3) #x
+		game.jugar(2,2) #o
+		game.jugar(2,1) #x
+		game.jugar(3,1) #o
+		game.jugar(3,2) #x
+		game.jugar(2,3) #o
+		game.jugar(3,3) #x
+		game.finDePartida.should  == 1
+	end
+
 end
